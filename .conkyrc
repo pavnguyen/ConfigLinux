@@ -1,0 +1,7 @@
+out_to_x no
+out_to_console yes
+update_interval 1.0
+total_run_times 0
+use_spacer none
+TEXT
+::   ${time %R %A, %d-%m-%y} | Kernel: ${exec uname -r | cut -d'-' -f 1 } | IP: ${addr wlp3s0} | RAM: $mem [$memperc%] | CPU: ${cpu}% [${acpitemp}C] | ⚡:  ${exec acpi -b | awk '{print $4}' | sed 's/[%,]//g' | head -n 1}%  &  ${exec acpi -b | awk '{print $4}' | sed 's/[%,]//g' | tail -n 1}% | Vol: ${exec pactl list sinks | grep "Volume" | cut -d " " -f6 | head -n 1}   ::  
